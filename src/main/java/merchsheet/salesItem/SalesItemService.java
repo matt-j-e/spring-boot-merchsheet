@@ -19,6 +19,7 @@ public class SalesItemService {
   @Autowired
   private ProductRepository productRepository;
 
+
   public List<SalesItem> getSalesItems() {
     return salesItemRepository.findAll();
   }
