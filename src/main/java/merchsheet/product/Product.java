@@ -22,11 +22,12 @@ public class Product implements Serializable {
   private int chrisPercentage;
   private int juliePercentage;
 
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+  @ManyToOne
   @JoinColumn(name = "tour_id", nullable = false)
   private Tour tour;
 
-  @JsonIgnore
+//  @JsonIgnore
   @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   private Set<SalesItem> salesItems;
 

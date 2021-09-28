@@ -19,11 +19,13 @@ public class SalesItem implements Serializable {
   private int numberFreebies;
   private int numberPaypalSales;
 
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+  @ManyToOne
   @JoinColumn(name = "gig_id")
   private Gig gig;
 
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+  @ManyToOne
   @JoinColumn(name = "product_id")
   private Product product;
 

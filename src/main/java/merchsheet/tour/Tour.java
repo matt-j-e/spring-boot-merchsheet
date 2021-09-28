@@ -17,11 +17,11 @@ public class Tour implements Serializable {
   private int id;
   private String name;
 
-  @JsonIgnore
+//  @JsonIgnore
   @OneToMany(mappedBy = "tour", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   private Set<Gig> gigs;
 
-  @JsonIgnore
+//  @JsonIgnore
   @OneToMany(mappedBy = "tour", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   private Set<Product> products;
 
