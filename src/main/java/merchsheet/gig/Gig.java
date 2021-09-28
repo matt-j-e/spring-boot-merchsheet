@@ -25,7 +25,7 @@ public class Gig implements Serializable {
   @JoinColumn(name = "tour_id", nullable = false)
   private Tour tour;
 
-//  @JsonIgnore
+  @JsonIgnore
   @OneToMany(mappedBy = "gig", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   private Set<SalesItem> salesItems;
 
@@ -39,17 +39,43 @@ public class Gig implements Serializable {
     this.tour = tour;
   }
 
-
   public String getVenue() {
     return venue;
+  }
+
+  public void setVenue(String venue) {
+    this.venue = venue;
   }
 
   public String getDate() {
     return date;
   }
 
+  public void setDate(String date) {
+    this.date = date;
+  }
+
   public double getVenueCut() {
     return venueCut;
   }
 
+  public void setVenueCut(double venueCut) {
+    this.venueCut = venueCut;
+  }
+
+  public Tour getTour() {
+    return tour;
+  }
+
+  public void setTour(Tour tour) {
+    this.tour = tour;
+  }
+
+  public Set<SalesItem> getSalesItems() {
+    return salesItems;
+  }
+
+  public void setSalesItems(Set<SalesItem> salesItems) {
+    this.salesItems = salesItems;
+  }
 }

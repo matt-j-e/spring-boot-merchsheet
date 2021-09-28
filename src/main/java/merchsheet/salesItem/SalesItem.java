@@ -21,12 +21,12 @@ public class SalesItem implements Serializable {
 
 //  @ManyToOne(fetch = FetchType.LAZY, optional = false)
   @ManyToOne
-  @JoinColumn(name = "gig_id")
+  @JoinColumn(name = "gig_id", referencedColumnName = "id")
   private Gig gig;
 
 //  @ManyToOne(fetch = FetchType.LAZY, optional = false)
   @ManyToOne
-  @JoinColumn(name = "product_id")
+  @JoinColumn(name = "product_id", referencedColumnName = "id")
   private Product product;
 
   public SalesItem(int openingStock, int closingStock, int numberFreebies, int numberPaypalSales, Gig gig, Product product) {
