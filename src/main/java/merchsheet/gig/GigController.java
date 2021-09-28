@@ -23,7 +23,7 @@ public class GigController {
 
   /**
    * Gets all Gigs on a specific Tour
-   * @param tourId - the Id of the Tour for which Gigs are required
+   * @param tourId - the id of the Tour for which Gigs are required
    * @return - List of Gigs
    */
   @GetMapping(path = "/{tourId}")

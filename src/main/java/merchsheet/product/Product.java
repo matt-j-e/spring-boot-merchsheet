@@ -27,7 +27,7 @@ public class Product implements Serializable {
   @JoinColumn(name = "tour_id", nullable = false)
   private Tour tour;
 
-//  @JsonIgnore
+  @JsonIgnore
   @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   private Set<SalesItem> salesItems;
 
@@ -89,5 +89,13 @@ public class Product implements Serializable {
 
   public void setTour(Tour tour) {
     this.tour = tour;
+  }
+
+  public Set<SalesItem> getSalesItems() {
+    return salesItems;
+  }
+
+  public void setSalesItems(Set<SalesItem> salesItems) {
+    this.salesItems = salesItems;
   }
 }
