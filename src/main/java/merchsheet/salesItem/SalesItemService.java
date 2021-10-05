@@ -28,11 +28,11 @@ public class SalesItemService {
     return salesItemRepository.findByGigId(gigId);
   }
 
-  public void addSalesItem(SalesItem salesItem, int gigId, int productId) {
+  public SalesItem addSalesItem(SalesItem salesItem, int gigId, int productId) {
     Gig gig = gigRepository.findById(gigId).get();
     Product product = productRepository.findById(productId).get();
     salesItem.setGig(gig);
     salesItem.setProduct(product);
-    salesItemRepository.save(salesItem);
+    return salesItemRepository.save(salesItem);
   }
 }

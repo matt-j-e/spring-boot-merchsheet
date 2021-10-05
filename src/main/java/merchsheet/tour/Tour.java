@@ -17,11 +17,11 @@ public class Tour implements Serializable {
   private int id;
   private String name;
 
-//  @JsonIgnore
+  @JsonIgnore
   @OneToMany(mappedBy = "tour", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   private Set<Gig> gigs;
 
-//  @JsonIgnore
+  @JsonIgnore
   @OneToMany(mappedBy = "tour", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   private Set<Product> products;
 
@@ -38,5 +38,25 @@ public class Tour implements Serializable {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public Set<Gig> getGigs() {
+    return gigs;
+  }
+
+  public void setGigs(Set<Gig> gigs) {
+    this.gigs = gigs;
+  }
+
+  public Set<Product> getProducts() {
+    return products;
+  }
+
+  public void setProducts(Set<Product> products) {
+    this.products = products;
   }
 }

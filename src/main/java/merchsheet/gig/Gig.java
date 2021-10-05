@@ -14,7 +14,7 @@ public class Gig implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Integer id;
 
   private String venue;
   private String date;
@@ -77,5 +77,9 @@ public class Gig implements Serializable {
 
   public void setSalesItems(Set<SalesItem> salesItems) {
     this.salesItems = salesItems;
+  }
+
+  public Integer getId() {
+    return id;
   }
 }

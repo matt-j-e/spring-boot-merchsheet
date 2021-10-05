@@ -98,4 +98,8 @@ public class Product implements Serializable {
   public void setSalesItems(Set<SalesItem> salesItems) {
     this.salesItems = salesItems;
   }
+
+  public int getId() {
+    return id;
+  }
 }

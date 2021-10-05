@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping(path = "/sales")
 public class SalesItemController {
@@ -37,9 +38,9 @@ public class SalesItemController {
    * @param gigId - the id of the Gig to which the SalesItem relates
    * @param productId - the id of the Product to which the SalesItem relates
    */
-  @PostMapping(path = "/{gigId}/{productId}")
-  public void addSalesItem(@RequestBody SalesItem salesItem, @PathVariable int gigId,  @PathVariable int productId) {
-    salesItemService.addSalesItem(salesItem, gigId, productId);
+  @PutMapping(path = "/{gigId}/{productId}")
+  public SalesItem addSalesItem(@RequestBody SalesItem salesItem, @PathVariable int gigId,  @PathVariable int productId) {
+    return salesItemService.addSalesItem(salesItem, gigId, productId);
   }
 
 

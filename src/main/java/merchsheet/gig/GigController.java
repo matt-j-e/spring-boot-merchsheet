@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping(path = "/gigs")
 public class GigController {
@@ -26,9 +27,19 @@ public class GigController {
    * @param tourId - the id of the Tour for which Gigs are required
    * @return - List of Gigs
    */
-  @GetMapping(path = "/{tourId}")
+  @GetMapping(path = "/tour/{tourId}")
   public List<Gig> getGigsByTour(@PathVariable int tourId) {
     return gigService.getGigsByTour(tourId);
+  }
+
+  /**
+   * Gets Gig by id
+   * @param gigId id of the Gig to get
+   * @return a Gig object
+   */
+  @GetMapping(path = "/{gigId}")
+  public Gig getGigById(@PathVariable int gigId) {
+    return gigService.getGigById(gigId);
   }
 
   /**

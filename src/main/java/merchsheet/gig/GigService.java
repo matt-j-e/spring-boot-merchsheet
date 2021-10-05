@@ -29,4 +29,8 @@ public class GigService {
     gig.setTour(tour);
     gigRepository.save(gig);
   }
+
+  public Gig getGigById(int id) {
+    return gigRepository.findById(id).get();
+  }
 }
