@@ -27,14 +27,14 @@ public class MerchsheetApplication {
 																						 SalesItemRepository salesItemRepository) {
 		return args -> {
 			// create a tour
-			Tour tour = new Tour("2021 Autumn Tour");
+			Tour tour = new Tour("Test Tour");
 			// save the tour
 			tourRepository.save(tour);
 
 			// create and save some gigs
-			Gig gig1 = new Gig("Gig 1", "2021-10-01", 5000, tour);
-			Gig gig2 = new Gig("Gig 2", "2021-10-02", 3000, tour);
-			Gig gig3 = new Gig("Gig 3", "2021-10-03", 0, tour);
+			Gig gig1 = new Gig("Pompeii", "2021-10-01", 5000, tour);
+			Gig gig2 = new Gig("Sydney Opera House", "2021-10-02", 3000, tour);
+			Gig gig3 = new Gig("Hanging Gardens of Babylon", "2021-10-03", 0, tour);
 			gigRepository.save(gig1);
 			gigRepository.save(gig2);
 			gigRepository.save(gig3);

@@ -1,5 +1,6 @@
 package merchsheet.tour;
 
+import merchsheet.gig.Gig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,11 @@ public class TourService {
     return tourRepository.findAll();
   }
 
-  public void addTour(Tour tour) {
-    tourRepository.save(tour);
+  public Tour addTour(Tour tour) {
+    return tourRepository.save(tour);
+  }
+
+  public Tour getTourById(int id) {
+    return tourRepository.findById(id).get();
   }
 }

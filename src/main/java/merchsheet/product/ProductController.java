@@ -28,8 +28,8 @@ public class ProductController {
    * @param tourId - the id of the Tour to which the Product relates
    */
   @PostMapping(path = "/{tourId}")
-  public void addProduct(@RequestBody Product product, @PathVariable int tourId) {
-    productService.addProduct(product, tourId);
+  public Product addProduct(@RequestBody Product product, @PathVariable int tourId) {
+    return productService.addProduct(product, tourId);
   }
 
   /**

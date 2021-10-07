@@ -24,9 +24,9 @@ public class ProductService {
     return productRepository.findByTourId(tourId);
   }
 
-  public void addProduct(Product product, int tourId) {
+  public Product addProduct(Product product, int tourId) {
     Tour tour = tourRepository.findById(tourId).get();
     product.setTour(tour);
-    productRepository.save(product);
+    return productRepository.save(product);
   }
 }

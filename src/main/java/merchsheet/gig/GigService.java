@@ -24,10 +24,10 @@ public class GigService {
     return gigRepository.findByTourId(tourId);
   }
 
-  public void addGig(Gig gig, int tourId) {
+  public Gig addGig(Gig gig, int tourId) {
     Tour tour = tourRepository.findById(tourId).get();
     gig.setTour(tour);
-    gigRepository.save(gig);
+    return gigRepository.save(gig);
   }
 
   public Gig getGigById(int id) {

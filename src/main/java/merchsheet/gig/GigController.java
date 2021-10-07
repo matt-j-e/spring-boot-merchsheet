@@ -48,7 +48,7 @@ public class GigController {
    * @param tourId - the id of the Tour to which the Gig relates
    */
   @PostMapping(path = "/{tourId}")
-  public void addGig(@RequestBody Gig gig, @PathVariable int tourId) {
-    gigService.addGig(gig, tourId);
+  public Gig addGig(@RequestBody Gig gig, @PathVariable int tourId) {
+    return gigService.addGig(gig, tourId);
   }
 }
