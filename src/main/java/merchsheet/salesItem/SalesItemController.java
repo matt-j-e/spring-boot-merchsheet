@@ -1,5 +1,6 @@
 package merchsheet.salesItem;
 
+import merchsheet.tour.Tour;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,9 +28,19 @@ public class SalesItemController {
    * @param gigId - the Id of the Gig for which SalesItems are required
    * @return List of SalesItems
    */
-  @GetMapping(path = "/{gigId}")
+  @GetMapping(path = "/gig/{gigId}")
   public List<SalesItem> getSalesItemsByGig(@PathVariable int gigId) {
     return salesItemService.getSalesItemsByGig(gigId);
+  }
+
+  /**
+   * Gets SalesItem by id
+   * @param itemId id of the salesItem to get
+   * @return a SalesItem object
+   */
+  @GetMapping(path = "/item/{salesItemId}")
+  public SalesItem getSalesItemById(@PathVariable int salesItemId) {
+    return salesItemService.getSalesItemById(salesItemId);
   }
 
   /**

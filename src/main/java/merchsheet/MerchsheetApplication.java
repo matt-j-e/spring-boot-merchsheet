@@ -55,7 +55,6 @@ public class MerchsheetApplication {
 			productRepository.save(book);
 			productRepository.save(designs);
 
-			/*
 			// create and save some salesItems
 			salesItemRepository.save(new SalesItem(20, 10, 1, 2, gig1, revolution));
 			salesItemRepository.save(new SalesItem(18, 10, 0, 3, gig1, shoulder));
@@ -68,7 +67,7 @@ public class MerchsheetApplication {
 			salesItemRepository.save(new SalesItem(18, 10, 0, 3, gig2, bestOf2));
 			salesItemRepository.save(new SalesItem(15, 10, 1, 1, gig2, revolution));
 			salesItemRepository.save(new SalesItem(10, 8, 0, 0, gig2, bag));
-			*/
+
 		};
 	}
 

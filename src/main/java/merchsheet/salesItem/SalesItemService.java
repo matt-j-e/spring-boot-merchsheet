@@ -4,6 +4,7 @@ import merchsheet.gig.Gig;
 import merchsheet.gig.GigRepository;
 import merchsheet.product.Product;
 import merchsheet.product.ProductRepository;
+import merchsheet.tour.Tour;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,5 +35,9 @@ public class SalesItemService {
     salesItem.setGig(gig);
     salesItem.setProduct(product);
     return salesItemRepository.save(salesItem);
+  }
+
+  public SalesItem getSalesItemById(int id) {
+    return salesItemRepository.findById(id).get();
   }
 }

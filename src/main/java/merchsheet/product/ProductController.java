@@ -1,5 +1,6 @@
 package merchsheet.product;
 
+import merchsheet.tour.Tour;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,8 +38,18 @@ public class ProductController {
    * @param tourId - the id of the Tour for which Products are required
    * @return - List of Products
    */
-  @GetMapping(path = "/{tourId}")
+  @GetMapping(path = "/tour/{tourId}")
   public List<Product> getProductsByTour(@PathVariable int tourId) {
     return productService.getProductsByTour(tourId);
+  }
+
+  /**
+   * Gets Product by id
+   * @param productId id of the Product to get
+   * @return a Product object
+   */
+  @GetMapping(path = "/{productId}")
+  public Product getProductById(@PathVariable int productId) {
+    return productService.getProductById(productId);
   }
 }

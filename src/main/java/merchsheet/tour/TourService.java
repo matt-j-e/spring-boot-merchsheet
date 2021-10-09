@@ -14,7 +14,7 @@ public class TourService {
 
 
   public List<Tour> getTours() {
-    return tourRepository.findAll();
+    return tourRepository.findAllByOrderByIdDesc();
   }
 
   public Tour addTour(Tour tour) {
