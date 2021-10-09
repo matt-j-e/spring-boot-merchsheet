@@ -46,7 +46,7 @@ public class MerchsheetApplication {
 			Product bestOf2 = new Product("Best of W&M Vol.2", 1000, 400, 50, 50, tour);
 			Product bag = new Product("Bag", 500, 0, 50, 50, tour);
 			Product book = new Product("Book - Secret Adventures", 1250, 0, 0, 100, tour);
-			Product designs = new Product("Chris designs", 2500, 0, 100, 0, tour);
+			Product designs = new Product("Chris designs 25", 2500, 0, 100, 0, tour);
 			productRepository.save(revolution);
 			productRepository.save(shoulder);
 			productRepository.save(bestOf1);

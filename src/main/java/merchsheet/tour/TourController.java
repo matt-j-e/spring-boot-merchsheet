@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000, https://merchsheet.vercel.app")
 @RestController
 @RequestMapping(path = "/tours")
 public class TourController {
@@ -22,7 +22,6 @@ public class TourController {
   public List<Tour> getTours() {
     return tourService.getTours();
   }
-
   /**
    * Gets Tour by id
    * @param tourId id of the Tour to get
@@ -32,6 +31,7 @@ public class TourController {
   public Tour getTourById(@PathVariable int tourId) {
     return tourService.getTourById(tourId);
   }
+
 
   @PostMapping
   public Tour addTour(@RequestBody Tour tour) {
