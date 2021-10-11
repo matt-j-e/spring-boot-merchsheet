@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface GigRepository extends JpaRepository<Gig, Integer> {
 
-  public List<Gig> findByTourId(int tourId);
+  public List<Gig> findByTourIdOrderByDateAsc(int tourId);
 }

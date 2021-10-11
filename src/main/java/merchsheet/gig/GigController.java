@@ -51,4 +51,9 @@ public class GigController {
   public Gig addGig(@RequestBody Gig gig, @PathVariable int tourId) {
     return gigService.addGig(gig, tourId);
   }
+
+  @PutMapping(path = "/{gigId}/{venueCut}")
+  public void updateGigVenueCut(@PathVariable int gigId, @PathVariable int venueCut) {
+    gigService.updateGigVenueCut(gigId, venueCut);
+  }
 }

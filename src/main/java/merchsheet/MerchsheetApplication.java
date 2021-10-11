@@ -120,7 +120,7 @@ public class MerchsheetApplication {
 			gigRepository.save(new Gig("Nettlebed", "2021-10-25", 0, autumn2021));
 			gigRepository.save(new Gig("Bromsgrove", "2021-10-28", 0, autumn2021));
 			gigRepository.save(new Gig("Birdwell", "2021-10-29", 0, autumn2021));
-			gigRepository.save(new Gig("Threlkeld", "2021-10-3001", 0, autumn2021));
+			gigRepository.save(new Gig("Threlkeld", "2021-10-30", 0, autumn2021));
 
 		};
 	}

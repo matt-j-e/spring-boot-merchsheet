@@ -21,7 +21,7 @@ public class GigService {
   }
 
   public List<Gig> getGigsByTour(int tourId) {
-    return gigRepository.findByTourId(tourId);
+    return gigRepository.findByTourIdOrderByDateAsc(tourId);
   }
 
   public Gig addGig(Gig gig, int tourId) {
@@ -32,5 +32,11 @@ public class GigService {
 
   public Gig getGigById(int id) {
     return gigRepository.findById(id).get();
+  }
+
+  public void updateGigVenueCut(int id, int venueCut) {
+    Gig gig = gigRepository.findById(id).get();
+    gig.setVenueCut(venueCut);
+    gigRepository.save(gig);
   }
 }
