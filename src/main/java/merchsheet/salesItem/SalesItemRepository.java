@@ -7,4 +7,6 @@ import java.util.List;
 public interface SalesItemRepository extends JpaRepository<SalesItem, Integer> {
 
   public List<SalesItem> findByGigId(int gigId);
+
+  public List<SalesItem> findByGigTourId(int tourId);
 }

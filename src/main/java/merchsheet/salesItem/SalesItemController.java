@@ -34,6 +34,16 @@ public class SalesItemController {
   }
 
   /**
+   * Gets SalesItems relating to a particular Tour
+   * @param tourId - the Id of the Tour for which SalesItems are required
+   * @return List of SalesItems
+   */
+  @GetMapping(path = "/tour/{tourId}")
+  public List<SalesItem> getSalesItemsByTour(@PathVariable int tourId) {
+    return salesItemService.getSalesItemsByTour(tourId);
+  }
+
+  /**
    * Gets SalesItem by id
    * @param itemId id of the salesItem to get
    * @return a SalesItem object

@@ -29,6 +29,10 @@ public class SalesItemService {
     return salesItemRepository.findByGigId(gigId);
   }
 
+  public List<SalesItem> getSalesItemsByTour(int tourId) {
+    return salesItemRepository.findByGigTourId(tourId);
+  }
+
   public SalesItem addSalesItem(SalesItem salesItem, int gigId, int productId) {
     Gig gig = gigRepository.findById(gigId).get();
     Product product = productRepository.findById(productId).get();
